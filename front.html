@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Shopping Page</title>
+  <link rel="icon" href="down.jpg"/>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    header {
+      background-color: #007bff;
+      color: white;
+      text-align: center;
+      padding: 20px;
+      font-size: 24px;
+    }
+    .item-container, .checkout-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+      padding: 20px;
+      justify-content: center;
+    }
+    .item-card {
+      background-color: white;
+      border: 1px solid #ddd;
+      border-radius: 8px;
+      padding: 15px;
+      width: 280px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      text-align: center;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    .item-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 8px 16px rgba(0, 0, 0, 0.15);
+    }
+    .item-card img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+    }
+    .item-card .item-name {
+      font-size: 18px;
+      font-weight: bold;
+      margin: 10px 0;
+    }
+    .item-card .price {
+      font-size: 16px;
+      color: #007bff;
+      margin: 10px 0;
+    }
+    .checkout-container {
+      width: 100%;
+      border-top: 2px solid #ddd;
+      margin-top: 20px;
+      padding-top: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .checkout-container h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+    .checkout-item {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px;
+      border-bottom: 1px solid #ddd;
+    }
+    .checkout-item:last-child {
+      border-bottom: none;
+    }
+    .checkout-item span {
+      font-size: 16px;
+    }
+    .remove-btn {
+      padding: 5px 10px;
+      background-color: #e74c3c;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .remove-btn:hover {
+      background-color: #c0392b;
+    }
+    .total {
+      text-align: right;
+      font-size: 18px;
+      font-weight: bold;
+      margin-top: 20px;
+    }
+    .confirm-btn {
+      background-color: #28a745;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 5px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    .confirm-btn:hover {
+      background-color: #218838;
+    }
+    #user-info-form {
+      display: none;
+      background-color: #fff;
+      padding: 20px;
+      border-radius: 8px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      margin-top: 20px;
+      width: 100%;
+      max-width: 400px;
+      margin: 20px auto;
+    }
+    #user-info-form input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: 1px solid #ddd;
+    }
+    #confirmation-modal {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.5);
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+    }
+    .modal-content {
+      background-color: white;
+      padding: 20px;
+      border-radius: 8px;
+      width: 300px;
+    }
+    .modal-content button {
+      padding: 10px;
+      margin-top: 10px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header Section -->
+  <header>
+    <h1>Shopping Page</h1>
+  </header>
+
+  <!-- Items Section -->
+  <div class="item-container" id="items-container">
+    <!-- Dynamic Content will be injected here by JS -->
+  </div>
+
+  <!-- Checkout Section -->
+  <div class="checkout-container">
+    <h2>Your Cart</h2>
+    <div id="checkout-items">
+      <!-- Dynamically updated checkout items will go here -->
+    </div>
+    <div class="total" id="total-price">
+      Total: $0.00
+    </div>
+    <button class="confirm-btn" id="confirm-order">Confirm Order</button>
+  </div>
+
+  <!-- User Information Form -->
+  <div id="user-info-form">
+    <h3>Please Provide Your Information</h3>
+    <form id="user-form">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="text" id="phone" placeholder="Phone" required>
+      <input type="email" id="email" placeholder="Email" required>
+      <input type="text" id="address" placeholder="Shipping Address" required>
+      <button type="submit" class="confirm-btn">Submit Information</button>
+    </form>
+  </div>
+
+  <!-- Confirmation Modal -->
+  <div id="confirmation-modal">
+    <div class="modal-content">
+      <h2>Confirmation</h2>
+      <p>Are you sure you want to place the order?</p>
+      <button id="confirm-yes">Yes</button>
+      <button id="confirm-no">No</button>
+    </div>
+  </div>
+
+  <script src="back.js"></script>
+</body>
+</html>

@@ -1,0 +1,34 @@
+[
+  {
+    "orderId": 1,
+    "userName": "ss",
+    "userPhone": "ss",
+    "userEmail": "juniorkozak6@gmail.com",
+    "userAddress": "ss",
+    "cart": [
+      {
+        "name": "Item 1",
+        "image": "download.jpg",
+        "price": 20,
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 20
+  },
+  {
+    "orderId": 2,
+    "userName": "ss",
+    "userPhone": "ss",
+    "userEmail": "juniorkozak6@gmail.com",
+    "userAddress": "ss",
+    "cart": [
+      {
+        "name": "Item 1",
+        "image": "download.jpg",
+        "price": 20,
+        "quantity": 1
+      }
+    ],
+    "totalPrice": 20
+  }
+]
